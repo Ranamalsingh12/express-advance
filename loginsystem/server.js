@@ -4,7 +4,6 @@ const bodyparser = require('body-parser');
 const session = require("express-session");
 const app = express();
 const {v4: uuidv4} = require("uuid")
-
 const router = require('./router')
 
 const PORT = process.env.PORT || 3000
@@ -28,7 +27,7 @@ app.use('/route',router)
 
 //home route
 app.get('/',(req, res) => {
-    res.render('header',{title : "Login System"});
+    res.render('base',{title : "Login System"});
 })
 
 
