@@ -5,6 +5,8 @@ const session = require("express-session");
 const app = express();
 const {v4: uuidv4} = require("uuid")
 
+const router = require('./router')
+
 const PORT = process.env.PORT || 3000
 
 app.use(bodyparser.json());
@@ -21,6 +23,8 @@ app.use(session({
     resave: false,
     saveUninitialized: true
 }));
+
+app.use('/route',router)
 
 //home route
 app.get('/',(req, res) => {
