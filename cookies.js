@@ -25,6 +25,11 @@ app.get('/getUser',(req, res ) => {
     res.send(req.cookies)
 })
 
+app.get('/loggedout',(req, res ) => {
+    res.clearCookie("userData")
+    res.send("User logged out sucess")
+})
+
 app.listen(PORT, () => {
     console.log(`Listening the request to http://localhost:${PORT}`);
 })
