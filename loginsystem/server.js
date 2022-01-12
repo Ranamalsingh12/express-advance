@@ -28,7 +28,7 @@ app.use('/route',router)
 
 //home route
 app.get('/',(req, res) => {
-    res.render('base',{title : "Login System"});
+    res.render('header',{title : "Login System"});
 })
 
 
