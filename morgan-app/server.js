@@ -11,13 +11,16 @@ morgan.token('id',function getId(req) {
     return req.id;
 });
 
-morgan.token('mayank',function (req,res,mayank) {
+morgan.token('tokens',function (req,res,mayank) {
     return "user id"
 })
 
+let accessLogStream = fs.createWriteStream(path.join(__dirname,'access.log'),{flags : 'a'});
+app.use(morgan(':id :token :url :response-time"'),{stream : accessLogStream});
+
 app.use(assignId);
 
-app.use(morgan(':id :mayank :url :response-time"'));
+app.use(morgan(':id :url :response-time"'));
 
 app.get('/',(req, res)=>{
     res.end("morgan logger")
