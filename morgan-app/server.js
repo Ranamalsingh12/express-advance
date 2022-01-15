@@ -4,6 +4,9 @@ const app = express();
 
 const port = 3000;
 
+app.use(morgan(':method :status'));
+
+
 app.get('/',(req, res)=>{
     res.end("morgan logger")
 })
