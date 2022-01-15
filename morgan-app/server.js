@@ -23,7 +23,7 @@ app.use(morgan('common', {
 
 app.use(assignId);
 
-app.use(morgan(':id :url :response-time"'));
+// app.use(morgan(':id :url :response-time"'));
 
 app.get('/',(req, res)=>{
     res.end("morgan logger")
