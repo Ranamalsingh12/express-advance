@@ -1,0 +1,39 @@
+let accounts = [
+    {
+        "id":1,
+        "username":"Mayank",
+        "email":"mayank1@gmail.com",
+        "gender":"Male",
+        "status":"Inactive"
+    },
+    {
+        "id":2,
+        "username":"Tanu",
+        "email":"tanu2@gmail.com",
+        "gender":"Female",
+        "status":"Inactive"
+    },
+    {
+        "id":3,
+        "username":"Yahsika",
+        "email":"yashu@gmail.com",
+        "gender":"Female",
+        "status":"Inactive"
+    },
+    {
+        "id":4,
+        "username":"Joginder",
+        "email":"jogi@gmail.com",
+        "gender":"Male",
+        "status":"Inactive"
+    },
+    {
+        "id":5,
+        "username":"Lakshay",
+        "email":"lakshay@gmail.com",
+        "gender":"Male",
+        "status":"Inactive"
+    },
+]
+
+module.exports = accounts;
