@@ -39,10 +39,10 @@ route.put('/accounts/:id',(req, res)=>{
         res.status(500).send("Account not found")
     }
     else{
-        // const update = {...account ...body}
-        console.log(account);
-        // accounts[index] = 
-        res.end()
+        const update = {...account ,...body}
+        // console.log({...account,...body});
+        accounts[index] = update
+        res.send(update)
     }
 })
 
