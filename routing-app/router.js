@@ -1,6 +1,6 @@
 const express = require("express");
 const route = express.Router();
-const accounts = require("./dataabase")
+var accounts = require("./dataabase")
 
 //Get request
 route.get('/accounts',(req,res)=>{
@@ -43,6 +43,20 @@ route.put('/accounts/:id',(req, res)=>{
         // console.log({...account,...body});
         accounts[index] = update
         res.send(update)
+    }
+})
+
+//Delete Method
+route.delete('/accounts/:id',(req,res) => {
+    const accountid = Number(req.params.id)
+    const newAcc = accounts.filter((account)=>account.id != accountid)
+
+    if(!newAcc){
+        res.status(500).send("Account not found")
+    }
+    else{
+        accounts = newAcc;
+        res.send(accounts)
     }
 })
 
