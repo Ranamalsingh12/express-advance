@@ -16,34 +16,34 @@ route.post('/accounts',(req, res) => {
 
 route.get('/accounts/:id',(req,res) => {
     const accountid = Number(req.params.id)
-    const getAcc = accounts.find((account)=>{
+    const getAccount = accounts.find((account)=>{
         account.id === accountid
     })
 
-    if(getAcc){
+    if(!getAccount){
         res.status(500).send("Account not found")
     }
     else{
-        res.json({userData:[getAcc]})
+        res.json({ userData : [getAccount]})
     }
 })
 
 
 //PUT http method
-// route.put('/accounts/:id',(req, res)=>{
-//     const accountid = Number(req.params.id)
-//     const body = req.body;
-//     const account = accounts.find((account) => account.id === accountid)
-//     const index = accounts.indexOf(account);
-//     if(!account){
-//         res.status(500).send("Account not found")
-//     }
-//     else{
-//         // const update = {...account ...body}
-//         console.log(account);
-//         // accounts[index] = 
-//         res.end()
-//     }
-// })
+route.put('/accounts/:id',(req, res)=>{
+    const accountid = Number(req.params.id)
+    const body = req.body;
+    const account = accounts.find((account) => account.id === accountid)
+    const index = accounts.indexOf(account);
+    if(!account){
+        res.status(500).send("Account not found")
+    }
+    else{
+        // const update = {...account ...body}
+        console.log(account);
+        // accounts[index] = 
+        res.end()
+    }
+})
 
 module.exports = route;
