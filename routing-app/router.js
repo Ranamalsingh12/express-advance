@@ -47,7 +47,7 @@ route.put('/accounts/:id',(req, res)=>{
 })
 
 //Delete Method
-route.delete('/accounts/:id',(req,res) => {
+route.delete('/accounts/:id',(req, res) => {
     const accountid = Number(req.params.id)
     const newAcc = accounts.filter((account)=>account.id != accountid)
 
